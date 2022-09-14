@@ -1,0 +1,75 @@
+<div
+  class="shadow-3-6 radius-8 blanc_bg mb-2 border-bottom-1-solid-gris_dark col"
+>
+  <div class="card shadow-sm d-flex">
+    <!-- <img class="bd-placeholder-img card-img-top"
+    [src]="imageSrc(result.id.raw)"
+    [alt]="result.name.raw"
+  /> -->
+
+    <div className="p-2 sui-result__header">
+      <h3>
+        <a (click)="onClickLink($event, '{{result.nps_link.raw }}')">
+          {{ result.title.snippet }}
+        </a>
+      </h3>
+    </div>
+    <div class="p-2 card-body">
+      <div *ngIf="result.title" className="sui-result__body">
+        {{ result.content.snippet }}
+        <!-- <div *ngIf="result.content.snippet" className="sui-result__details" dangerouslySetInnerHTML={{ __html: result.content.snippet }}></div> -->
+      </div>
+      <div class="row p-5 m-5">
+        <button
+          *ngIf="result.page.raw"
+          class="btn-primaire-h40"
+          type="button"
+          alt="tag page bouton non cliquable"
+          disabled
+        >
+          à la page {{ result.page.raw }}
+        </button>
+        <button
+          *ngIf="result.origine.raw"
+          class="btn-primaire-violet_dark-h40"
+          type="button"
+          alt="tag origine bouton non cliquable"
+          disabled
+        >
+          {{ result.origine.raw }}
+        </button>
+        <button
+          *ngIf="result.grand_compte.raw"
+          class="btn-primaire-bleu_turquoise_dark-h40"
+          type="button"
+          alt="tag grand_compte bouton non cliquable"
+          disabled
+        >
+          {{ result.grand_compte.raw }}
+        </button>
+      </div>
+
+      <!-- <div *ngIf="result.type">Type: {{ result.type.raw }}</div>
+    <div *ngIf="result.race">Race: {{ result.race.raw }}</div>
+    <div *ngIf="result.card_class">
+      Class: {{ result.card_class.raw }}
+    </div>
+    <div>Set: {{ result.set.raw }}</div>
+    <div>Rarity: {{ result.rarity.raw }}</div>
+    <br />
+    <div *ngIf="result.cost">Cost: {{ result.cost.raw }}</div>
+    <div *ngIf="result.attack">Attack: {{ result.attack.raw }}</div>
+    <div *ngIf="result.durability">
+      Durability: {{ result.durability.raw }}
+    </div>
+    <div *ngIf="result.health">Health: {{ result.health.raw }}</div>
+    <div *ngIf="result.armor">Armor: {{ result.armor.raw }}</div>
+    <div *ngIf="result.spell_damage">
+      Spell damage: {{ result.spell_damage.raw }}
+    </div>
+    <div *ngIf="result.overload">Overload: {{ result.overload.raw }}</div>
+    <br />
+    <div *ngIf="result.artist">Artist: {{ result.artist.raw }}</div> -->
+    </div>
+  </div>
+</div>

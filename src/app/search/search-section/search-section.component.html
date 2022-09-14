@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="">
+    <!-- Search Bar -->
+    <form>
+      <div class="form-group" [formGroup]="searchForm">
+        <input
+          id="input-example"
+          type="text"
+          required
+          formControlName="searchInputValue"
+        />
+        <label for="input-example" class="control-label"
+          >Placeholder ou libellé</label
+        >
+        <i class="bar"></i>
+        <i class="dsicon-check"></i>
+        <i class="dsicon-close"></i>
+        <label for="input-example" class="message-erreur"
+          >Message d'erreur</label
+        >
+        <label for="input-example" class="message-aide"
+          >Aide à la saisie (option)</label
+        >
+      </div>
+    </form>
+
+    <!-- <form [formGroup]="searchForm">
+    <input type="text"
+           class="form-control "
+           placeholder="search"
+           formControlName="searchInputValue"
+    >
+  </form> -->
+    <!-- Search Bar -->
+  </div>
+  <!-- <div class="row"> -->
+  <div class="col-2">
+    <!-- Search Facet -->
+
+    <app-search-facet
+      [checked]="facets['grand_compte']"
+      (change)="handleFacetChange($event, 'grand_compte')"
+    ></app-search-facet>
+
+    <!-- <app-search-facet
+      [checked]="facets['grand_compte']"
+      [facet]="searchState.facets.grand_compte[0]"
+      (change)="handleFacetChange($event, 'grand_compte')"
+    ></app-search-facet> -->
+    <!-- <app-search-facet
+      [checked]="facets['origine']"
+      [facet]="searchState.facets.origine[0]"
+      (change)="handleFacetChange($event, 'origine')"
+    ></app-search-facet>
+    <app-search-facet
+      [checked]="facets['author']"
+      [facet]="searchState.facets.author[0]"
+      (change)="handleFacetChange($event, 'author')"
+    ></app-search-facet>
+    <app-search-facet
+      [checked]="facets['extension']"
+      [facet]="searchState.facets.extension[0]"
+      (change)="handleFacetChange($event, 'extension')"
+    ></app-search-facet>
+    <app-search-facet
+      [checked]="facets['page']"
+      [facet]="searchState.facets.page[0]"
+      (change)="handleFacetChange($event, 'page')"
+    ></app-search-facet>
+    <app-search-facet
+      [checked]="facets['creation_date']"
+      [facet]="searchState.facets.creation_date[0]"
+      (change)="handleFacetChange($event, 'creation_date')"
+    ></app-search-facet>
+    <app-search-facet
+      [checked]="facets['modification_date']"
+      [facet]="searchState.facets.modification_date[0]"
+      (change)="handleFacetChange($event, 'modification_date')"
+    ></app-search-facet> -->
+    <!-- Search Facet -->
+  </div>
+  <div class="col-10">
+    <!-- Search Content -->
+    <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+    <ng-container *ngFor="let result of searchState.results">
+      <app-search-result [result]="result"></app-search-result>
+    </ng-container>
+    <!-- </div> -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <app-search-pagination
+        *ngIf="thereAreResults"
+        [totalPages]="searchState.totalPages"
+        (pageChanged)="setCurrentPage($event)"
+      ></app-search-pagination>
+    </div>
+    <!-- Search Content -->
+  </div>
+  <!-- </div> -->
+</div>
