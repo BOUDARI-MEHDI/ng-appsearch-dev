@@ -1,0 +1,31 @@
+.sui-search-box__wrapper {
+  height: unset;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: stretch;
+  background: #ffffff;
+  margin-top: 1rem;
+  outline: none;
+  border-radius: 0px;
+  border: 0px;
+  position: relative;
+  box-sizing: inherit;
+}
+.sui-search-box__text-input {
+  flex: 2;
+  width: 100%;
+  min-height: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  background: #f6f6f6;
+  border: 0px solid #fff;
+  border-bottom: 1px #636363 solid;
+  color: #636363;
+  border-radius: 4px;
+}
+
+.sui-layout-header {
+  padding: 32px 24px;
+  border-bottom: 1px solid #636363;
+}

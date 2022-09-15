@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="">
+<div class="App">
+  <div class="sui-search-box__wrapper">
     <!-- Search Bar -->
-    <form>
+    <!-- <form>
       <div class="form-group" [formGroup]="searchForm">
         <input
           id="input-example"
@@ -22,15 +22,17 @@
           >Aide à la saisie (option)</label
         >
       </div>
-    </form>
-
-    <!-- <form [formGroup]="searchForm">
-    <input type="text"
-           class="form-control "
-           placeholder="search"
-           formControlName="searchInputValue"
-    >
-  </form> -->
+    </form>-->
+    <div class="sui-layout-header">
+      <form [formGroup]="searchForm">
+        <input
+          type="text"
+          class="sui-search-box__text-input"
+          placeholder="Recherche"
+          formControlName="searchInputValue"
+        />
+      </form>
+    </div>
     <!-- Search Bar -->
   </div>
   <!-- <div class="row"> -->
