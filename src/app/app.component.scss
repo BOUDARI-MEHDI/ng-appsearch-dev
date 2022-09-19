@@ -6,4 +6,9 @@
 :root {
   --font-family: 'poppins'
 } */
-
+.sui-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: inherit;
+}
