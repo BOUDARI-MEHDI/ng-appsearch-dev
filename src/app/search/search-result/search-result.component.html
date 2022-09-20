@@ -1,20 +1,18 @@
-<div
-  class="shadow-3-6 radius-8 blanc_bg mb-2 border-bottom-1-solid-gris_dark col"
->
-  <div class="card shadow-sm d-flex">
+<div class="searchbox">
+  <div class="sui-result">
     <!-- <img class="bd-placeholder-img card-img-top"
     [src]="imageSrc(result.id.raw)"
     [alt]="result.name.raw"
   /> -->
 
-    <div className="p-2 sui-result__header">
+    <div className="sui-results-container">
       <h3 class="titre-28 ds-bold">
         <a (click)="onClickLink($event, '{{result.nps_link.raw }}')">
           {{ result.title.snippet }}
         </a>
       </h3>
     </div>
-    <div class="titre-16 ds-bold card-body">
+    <div class="titre-14 ds-bold card-body">
       <div *ngIf="result.title" className="sui-result__body">
         {{ result.content.snippet }}
         <!-- <div *ngIf="result.content.snippet" className="sui-result__details" dangerouslySetInnerHTML={{ __html: result.content.snippet }}></div> -->
