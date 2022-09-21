@@ -1,31 +1,34 @@
 .titre-28 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', arial, sans-serif;
 }
 .titre-14 {
   size: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', arial, sans-serif;
 }
 .searchbox {
   padding: 0%;
   width: 100%;
   display: flex;
+  position: relative;
+  justify-content: center;
   flex-direction: column;
+  align-items: stretch;
 }
 .sui-results-container {
   padding: 0;
   list-style: none;
   margin-top: 0;
   margin-bottom: 1rem;
-  margin : 1rem
+  margin-left: 1rem;
 }
 .sui-result {
-  border-radius: 16px, 8px;
-  margin-bottom: 20px;
+  border-radius: 16px 4px 8px 16px;
+  margin: 20px;
   overflow: hidden;
   background-color: #fff;
   box-sizing: border-box;
   line-height: 26px;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Poppins', arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
   text-align: left;
@@ -35,7 +38,52 @@
   text-decoration: none;
   display: block;
   border: 1px solid #f0f0f0;
-  background: white;
+  background: linear-gradient(225deg, #fffdf6 0%, #fcf7e7 100%);
   overflow-wrap: break-word;
 }
-
+/* transformation card result */
+.sui-result:hover {
+  cursor: pointer;
+  margin-left: 3px;
+  box-shadow: 0 6px 12px 0 rgba(34, 34, 34, 0.3);
+  background: linear-gradient(225deg, #8d0151 0%, #b9066c 100%);
+  color: white;
+  transition: all 0.5s ease-in-out;
+  line-height: 25px;
+  transform: translateY(-2px);
+}
+.sui-result__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+.sui-result__body {
+  display: flex;
+  position: relative;
+  width: auto;
+  padding: 5px 25px 25px 25px;
+}
+.sui-result__button {
+  justify-content: flex-start;
+  display: flex;
+  align-items: left;
+  margin-left: 1.5rem;
+}
+// style button
+.sui-result__button-page,
+.sui-result__button-origine,
+.sui-result__button-grand_compte {
+  border-radius: 16px;
+  margin-right: 0.5rem;
+  cursor: default;
+  position: inherit;
+  align-items: left;
+  background-color: #8d0151;
+  color: #FFFFFF;
+  font-size: 13px;
+  padding: 5px 24px;
+  border: none;
+  text-align: center;
+  opacity: 50%;
+}

@@ -1,26 +1,28 @@
-<div class="searchbox">
+<div class="sui-results-container">
   <div class="sui-result">
     <!-- <img class="bd-placeholder-img card-img-top"
     [src]="imageSrc(result.id.raw)"
     [alt]="result.name.raw"
   /> -->
 
-    <div className="sui-results-container">
-      <h3 class="titre-28 ds-bold">
-        <a (click)="onClickLink($event, '{{result.nps_link.raw }}')">
-          {{ result.title.snippet }}
-        </a>
-      </h3>
+    <div class="">
+      <div class="sui-result__header">
+        <h3 class="titre-28 ds-bold">
+          <a (click)="onClickLink($event, '{{result.nps_link.raw }}')">
+            {{ result.title.snippet }}
+          </a>
+        </h3>
+      </div>
     </div>
-    <div class="titre-14 ds-bold card-body">
-      <div *ngIf="result.title" className="sui-result__body">
+    <div class="titre-14">
+      <div *ngIf="result.title" class="sui-result__body">
         {{ result.content.snippet }}
         <!-- <div *ngIf="result.content.snippet" className="sui-result__details" dangerouslySetInnerHTML={{ __html: result.content.snippet }}></div> -->
       </div>
-      <div class="row p-5 m-5">
+      <div class="sui-result__button">
         <button
           *ngIf="result.page.raw"
-          class="btn-primaire-h40"
+          class="sui-result__button-page"
           type="button"
           alt="tag page bouton non cliquable"
           disabled
@@ -29,7 +31,7 @@
         </button>
         <button
           *ngIf="result.origine.raw"
-          class="btn-primaire-violet_dark-h40"
+          class="sui-result__button-origine"
           type="button"
           alt="tag origine bouton non cliquable"
           disabled
@@ -38,7 +40,7 @@
         </button>
         <button
           *ngIf="result.grand_compte.raw"
-          class="btn-primaire-bleu_turquoise_dark-h40"
+          class="sui-result__button-grand_compte"
           type="button"
           alt="tag grand_compte bouton non cliquable"
           disabled
