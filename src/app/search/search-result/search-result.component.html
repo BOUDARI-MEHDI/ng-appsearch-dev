@@ -8,9 +8,12 @@
     <div class="">
       <div class="sui-result__header">
         <h3 class="titre-28 ds-bold">
-          <a (click)="onClickLink($event, '{{result.nps_link.raw }}')">
-            {{ result.title.snippet }}
-          </a>
+          <a
+            href="{{ result.nps_link.raw }}"
+            target="_blank"
+            onclick="return"
+            >{{ result.title.snippet }}</a
+          >
         </h3>
       </div>
     </div>
