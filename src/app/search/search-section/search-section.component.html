@@ -2,6 +2,7 @@
   <div class="">
     <!-- Search Bar -->
     <div class="sui-layout-header">
+      
       <div class="sui-layout-header__inner">
         <form [formGroup]="searchForm"  role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label">
         <div class="sui-search-box"> 
@@ -17,8 +18,8 @@
         formControlName="searchInputValue"
         class="sui-search-box__text-input" 
         />
-        <div class="sui-search-box__wrapper-iconSearch">
-        <img src="./assets/loupe.svg" alt="icone rechercher" />
+        <div class="sui-search-box__form-action-submit">
+        <img src="./assets/loupe.svg" alt="icone rechercher" class="sui-search-box__wrapper-iconSearch"/>
         </div>
         <input data-transaction-name="search submit" type="submit" class="button sui-search-box__submit" data-custom-attr="some value" value="rechercher">
       </div>
