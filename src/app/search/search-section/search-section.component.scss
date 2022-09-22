@@ -35,6 +35,20 @@
     margin: auto;
     border-radius: 2rem;
 }
+.sui-search-box__speaker {
+  position: relative;
+    background: #ff4b33;
+    border: none;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    -ms-flex-preferred-size: 40px;
+    flex-basis: 40px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 2rem;
+  
+}
 
 .sui-search-box__text-input {
   flex: 2;
@@ -52,6 +66,9 @@
 }
 .sui-layout-header__inner {
   box-sizing: inherit;
+  display: flex;
+  flex-direction: column;
+
 }
 .sui-search-box__wrapper-iconSearch {
   display: block;

@@ -4,30 +4,34 @@
     <div class="sui-layout-header">
       
       <div class="sui-layout-header__inner">
-        <form [formGroup]="searchForm"  role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label">
-        <div class="sui-search-box"> 
-        <input
-        aria-autocomplete="list" 
-        aria-labelledby="downshift-0-label" 
-        autocomplete="off" 
-        id="downshift-0-input" 
-        type="text"
-        data-transaction-name="search input" 
-        data-custom-attr="some value" 
-        placeholder="Recherche" 
-        formControlName="searchInputValue"
-        class="sui-search-box__text-input" 
-        />
-        <div class="sui-search-box__form-action-submit">
-        <img src="./assets/loupe.svg" alt="icone rechercher" class="sui-search-box__wrapper-iconSearch"/>
+        <div class="">
+          <form [formGroup]="searchForm"  role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label">
+            <div class="sui-search-box"> 
+              <input
+                aria-autocomplete="list" 
+                aria-labelledby="downshift-0-label" 
+                autocomplete="off" 
+                id="downshift-0-input" 
+                type="text"
+                data-transaction-name="search input" 
+                data-custom-attr="some value" 
+                placeholder="Recherche" 
+                formControlName="searchInputValue"
+                class="sui-search-box__text-input" 
+              />
+                <div class="sui-search-box__form-action-submit">
+                  <img src="./assets/search.svg" alt="icone rechercher" type="submit" class="button sui-search-box__submit" data-custom-attr="some value" class="sui-search-box__wrapper-iconSearch"/>
+                </div>
+                <div>            
+                  <img data-transaction-name="search submit" type="submit" class="button sui-search-box__speaker"  src="./assets/microphone.svg" data-custom-attr="some value" value="rechercher">
+                </div>
+            </div>
+
+          </form>
         </div>
-        <input data-transaction-name="search submit" type="submit" class="button sui-search-box__submit" data-custom-attr="some value" value="rechercher">
       </div>
-      </form>
-    
+      <!-- Search Bar -->
     </div>
-    <!-- Search Bar -->
-  </div></div>
   <!-- <div class="row"> -->
   <div class="col-2">
     <!-- Search Facet -->
