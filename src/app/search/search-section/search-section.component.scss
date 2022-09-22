@@ -14,42 +14,56 @@
 }
 .sui-search-box {
   display: flex;
-  width: 100%;
-  padding: 0 1.6rem 0 0;
-    border-bottom: 1px solid #757575;
-    background-color: #f6f6f6;
-    -webkit-box-pack: center;
-    justify-content: center;
-    border-radius: 4px;
+  max-width: 64rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #757575;
+  background-color: #f6f6f6;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.sui-search-box:hover {
+  cursor: select;
+  border-bottom: 2px solid #3d44c9;
+}
+input {
+  border: none;
+  outline: none;
 }
 .sui-search-box__form-action-submit {
   position: relative;
-    background: #ff4b33;
-    border: none;
-    padding: 0;
-    height: 40px;
-    width: 40px;
-    -ms-flex-preferred-size: 40px;
-    flex-basis: 40px;
-    overflow: hidden;
-    margin: auto;
-    border-radius: 2rem;
+  background: #5f65e3;
+  border: none;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  -ms-flex-preferred-size: 40px;
+  flex-basis: 40px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 2rem;
+  margin-right: 16px;
 }
-.sui-search-box__speaker {
-  position: relative;
-    background: #ff4b33;
-    border: none;
-    padding: 0;
-    height: 40px;
-    width: 40px;
-    -ms-flex-preferred-size: 40px;
-    flex-basis: 40px;
-    overflow: hidden;
-    margin: auto;
-    border-radius: 2rem;
-  
+/* transformation card result */
+.sui-search-box__form-action-submit:hover {
+  cursor: pointer;
+  background: #3d44c9;
 }
 
+.sui-search-box__speaker {
+  position: relative;
+  background: #f179bf;
+  color: #ffffff;
+  border: none;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  -ms-flex-preferred-size: 40px;
+  flex-basis: 40px;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 2rem;
+}
 .sui-search-box__text-input {
   flex: 2;
   width: 100%;
@@ -62,13 +76,12 @@
 }
 .sui-layout-header {
   padding: 32px 24px;
-  border-bottom: 1px solid #636363; 
+  border-bottom: 1px solid #636363;
 }
 .sui-layout-header__inner {
   box-sizing: inherit;
   display: flex;
   flex-direction: column;
-
 }
 .sui-search-box__wrapper-iconSearch {
   display: block;
@@ -78,4 +91,12 @@
   top: 9px;
   left: 9px;
   color: #ffffff;
+}
+.sui-search-box__wrapper-IconSpeaker {
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 9px;
+  left: 9px;
 }
