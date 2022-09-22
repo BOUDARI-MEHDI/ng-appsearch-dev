@@ -1,19 +1,29 @@
-<div class="App">
+<div class="">
   <div class="">
     <!-- Search Bar -->
-    <div class="sui-layout">
     <div class="sui-layout-header">
-      <form [formGroup]="searchForm">
+      <div class="sui-layout-header__inner">
+        <form [formGroup]="searchForm"  role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label">
+        <div class="sui-search-box"> 
         <input
-          type="text"
-          class="sui-search-box__text-input"
-          placeholder="Recherche"
-          formControlName="searchInputValue"
+        aria-autocomplete="list" 
+        aria-labelledby="downshift-0-label" 
+        autocomplete="off" 
+        id="downshift-0-input" 
+        type="text"
+        data-transaction-name="search input" 
+        data-custom-attr="some value" 
+        placeholder="Recherche" 
+        formControlName="searchInputValue"
+        class="sui-search-box__text-input" 
         />
         <div class="sui-search-box__wrapper-iconSearch">
         <img src="./assets/loupe.svg" alt="icone rechercher" />
         </div>
+        <input data-transaction-name="search submit" type="submit" class="button sui-search-box__submit" data-custom-attr="some value" value="rechercher">
+      </div>
       </form>
+    
     </div>
     <!-- Search Bar -->
   </div></div>

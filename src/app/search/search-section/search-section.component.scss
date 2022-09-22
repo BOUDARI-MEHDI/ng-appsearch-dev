@@ -27,6 +27,23 @@
 }
 .sui-layout-header {
   padding: 32px 24px;
-  border-bottom: 1px solid #636363;
-  
+  border-bottom: 1px solid #636363; 
+}
+.sui-layout-header__inner {
+  box-sizing: inherit;
+}
+.sui-search-box__wrapper-iconSearch {
+  height: unset;
+  width: 20px;
+  display: flex;
+  position: relative;
+  justify-content: left;
+  flex-direction: column;
+  align-items: stretch;
+  background: none;
+  margin-top: 1rem;
+  background: linear-gradient(225deg, #FAF5F3 0%, #EDE8E6 100%);
+  Color: #FFFFFF;
+  padding: 0.6rem;
+  border-radius: 100%
 }
