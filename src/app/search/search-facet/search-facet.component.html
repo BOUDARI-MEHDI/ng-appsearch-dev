@@ -1,27 +1,24 @@
-<div *ngIf="facet" class="accordion-item">
-  <div class="accordion-title">
-    <a class="h6 mb-1">Titre facet</a>
-    <!-- <a class="h6 mb-0">{{ facet.field }}</a> -->
+<div
+  *ngIf="facet"
+  class="shadow-3-6 radius-8 blanc_bg mb-xl-2 border-all-1-solid-gris_dark col"
+>
+  <div class="">
+    <a class="h6 mb-xl-1">{{ facet.field }}</a>
   </div>
-  <div class="collapse show">
-    <div class="accordion-content">
-      <div *ngFor="let facetItem of facet.data" class="mh-checkbox">
-        <input type="checkbox" id="checkbox1" name="checkbox1" checked />
-        <label for="checkbox1">Valider une option</label>
-      </div>
-
-      <!-- <ul>
-      <li *ngFor="let facetItem of facet.data">
-        <input
-        class="sui-multi-checkbox-facet__checkbox"
+  <div class="">
+    <div *ngFor="let facetItem of facet.data" class="mh-checkbox col">
+      <input
+        [id]="getID(facet.field, facetItem, facet.type)"
+        class=""
         type="checkbox"
         [value]="getValue(facetItem, facet.type)"
         [checked]="isChecked(getValue(facetItem, facet.type))"
         (change)="change.emit($event)"
       />
-        {{ getValue(facetItem, facet.type)}}<span style="float: right">({{facetItem.count}})</span>
-      </li>
-    </ul> -->
+      <label [for]="getID(facet.field, facetItem, facet.type)">
+        {{ getValue(facetItem, facet.type) }}
+        <label *ngIf="facetItem.count">({{ facetItem.count }})</label>
+      </label>
     </div>
   </div>
 </div>
