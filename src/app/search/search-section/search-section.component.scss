@@ -24,7 +24,7 @@
 }
 .sui-search-box:hover {
   cursor: select;
-  border-bottom: 2px solid #3d44c9;
+  border-bottom: 1.5px solid #5f65e3;
 }
 input {
   border: none;
@@ -47,7 +47,7 @@ input {
 /* transformation card result */
 .sui-search-box__form-action-submit:hover {
   cursor: pointer;
-  background: #aeafb6;
+  background: #3d44c9;
 }
 
 .sui-search-box__speaker {
