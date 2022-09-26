@@ -2,97 +2,81 @@
   <div class="">
     <!-- Search Bar -->
     <div class="sui-layout-header">
-      
       <div class="sui-layout-header__inner">
         <div class="">
-          <form [formGroup]="searchForm"  role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label">
-            <div class="sui-search-box"> 
+          <form
+            [formGroup]="searchForm"
+            role="combobox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-0-label"
+          >
+            <div class="sui-search-box">
               <input
-                aria-autocomplete="list" 
-                aria-labelledby="downshift-0-label" 
-                autocomplete="off" 
-                id="downshift-0-input" 
+                aria-autocomplete="list"
+                aria-labelledby="downshift-0-label"
+                autocomplete="off"
+                id="downshift-0-input"
                 type="text"
-                data-transaction-name="search input" 
-                data-custom-attr="some value" 
-                placeholder="Recherche" 
+                data-transaction-name="search input"
+                data-custom-attr="some value"
+                placeholder="Recherche"
                 formControlName="searchInputValue"
-                class="sui-search-box__text-input" 
+                class="sui-search-box__text-input"
               />
-                <div class="sui-search-box__form-action-submit">
-                  <img src="./assets/search.svg" alt="icone rechercher" type="submit" class="button sui-search-box__submit" data-custom-attr="some value" class="sui-search-box__wrapper-iconSearch"/>
-                </div>
-                <!--<div class="sui-search-box__speaker">            
+              <div class="sui-search-box__form-action-submit">
+                <img
+                  src="./assets/search.svg"
+                  alt="icone rechercher"
+                  type="submit"
+                  class="button sui-search-box__submit"
+                  data-custom-attr="some value"
+                  class="sui-search-box__wrapper-iconSearch"
+                />
+              </div>
+              <!--<div class="sui-search-box__speaker">            
                   <img data-transaction-name="search submit" type="submit" class="sui-search-box__wrapper-IconSpeaker"  src="./assets/microphone.svg" data-custom-attr="some value">
                 </div>-->
             </div>
-
           </form>
         </div>
       </div>
       <!-- Search Bar -->
     </div>
-  <!-- <div class="row"> -->
-  <div class="col-2">
-    <!-- Search Facet -->
+    <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+        <!-- <div>
+          <button (click)="resetFilter($event)">Reset filter</button>
+        </div> -->
+        <!-- Search Facet -->
 
-    <app-search-facet
-      [checked]="facets['grand_compte']"
-      (change)="handleFacetChange($event, 'grand_compte')"
-    ></app-search-facet>
-
-    <!-- <app-search-facet
-      [checked]="facets['grand_compte']"
-      [facet]="searchState.facets.grand_compte[0]"
-      (change)="handleFacetChange($event, 'grand_compte')"
-    ></app-search-facet> -->
-    <!-- <app-search-facet
-      [checked]="facets['origine']"
-      [facet]="searchState.facets.origine[0]"
-      (change)="handleFacetChange($event, 'origine')"
-    ></app-search-facet>
-    <app-search-facet
-      [checked]="facets['author']"
-      [facet]="searchState.facets.author[0]"
-      (change)="handleFacetChange($event, 'author')"
-    ></app-search-facet>
-    <app-search-facet
-      [checked]="facets['extension']"
-      [facet]="searchState.facets.extension[0]"
-      (change)="handleFacetChange($event, 'extension')"
-    ></app-search-facet>
-    <app-search-facet
-      [checked]="facets['page']"
-      [facet]="searchState.facets.page[0]"
-      (change)="handleFacetChange($event, 'page')"
-    ></app-search-facet>
-    <app-search-facet
-      [checked]="facets['creation_date']"
-      [facet]="searchState.facets.creation_date[0]"
-      (change)="handleFacetChange($event, 'creation_date')"
-    ></app-search-facet>
-    <app-search-facet
-      [checked]="facets['modification_date']"
-      [facet]="searchState.facets.modification_date[0]"
-      (change)="handleFacetChange($event, 'modification_date')"
-    ></app-search-facet> -->
-    <!-- Search Facet -->
-  </div>
-  <div class="col-10">
-    <!-- Search Content -->
-    <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
-    <ng-container *ngFor="let result of searchState.results">
-      <app-search-result [result]="result"></app-search-result>
-    </ng-container>
-    <!-- </div> -->
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <app-search-pagination
-        *ngIf="thereAreResults"
-        [totalPages]="searchState.totalPages"
-        (pageChanged)="setCurrentPage($event)"
-      ></app-search-pagination>
+        <div class="sui-layout-sidebar">
+          <ng-container *ngFor="let facet of searchState.facets | keyvalue"
+            ><app-search-facet class="sui-facet"
+              [checked]="facets2[$any(facet.key)]"
+              [facet]="searchState.facets[$any(facet.key)][0]"
+              (change)="handleFacetChange($event, $any(facet.key))"
+            ></app-search-facet>
+          </ng-container>
+        </div>
+        <!-- Search Facet -->
+      </div>
+      <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+        <!-- Search Content -->
+        <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+        <ng-container *ngFor="let result of searchState.results">
+          <app-search-result [result]="result"></app-search-result>
+        </ng-container>
+        <!-- </div> -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <app-search-pagination
+            *ngIf="thereAreResults"
+            [totalPages]="searchState.totalPages"
+            (pageChanged)="setCurrentPage($event)"
+          ></app-search-pagination>
+        </div>
+        <!-- Search Content -->
+      </div>
     </div>
-    <!-- Search Content -->
   </div>
-  <!-- </div> -->
 </div>
