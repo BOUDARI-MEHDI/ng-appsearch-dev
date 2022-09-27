@@ -45,6 +45,18 @@
     </div>
     <!-- Search Facet -->
     <div class="sui-layout-body">
+       <!-- paging info -->
+       <div class="sui-layout-main">
+       <div class="sui-layout-main-header">
+         <div class="sui-layout-main-header__inner">
+           <div class="sui-paging-info">
+             <div class="sui-results-per-page"> 
+            </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- paging info -->
       <div class="sui-layout-body__inner">
         <button class="sui-layout-sidebar-toggle" type="button" hidden="">
           Show filters
@@ -54,23 +66,26 @@
             Save Filters
           </button>
           <div>
-            
             <ng-container *ngFor="let facet of searchState.facets | keyvalue"
               >
               <div class="sui-facet">
-                <app-search-facet
+                <app-search-facet class= "sui-multi-checkbox-facet"
                 [checked]="facets2[$any(facet.key)]"
-                [facet]="searchState.facets[$any(facet.key)][0]"
+                [facet]="searchState.facets[$any(facet.key)][0]" class="sui-facet__title"
                 (change)="handleFacetChange($event, $any(facet.key))"
               >
-              
             </app-search-facet>
           </div> 
             </ng-container>
-          
           </div>
           <!-- Search Facet -->
         </div>
+       
+
+
+
+
+        
         <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
           <!-- Search Content -->
           <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
