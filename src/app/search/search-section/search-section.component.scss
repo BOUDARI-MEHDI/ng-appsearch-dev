@@ -132,14 +132,24 @@ input {
 .sui-facet {
   padding: 28px 18px;
   background-color: #ffffff;
-  border-radius: 8px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   font-family: 'Poppins', arial, sans-serif;
   font-size: 12px;
-  margin: 20px;
   overflow: hidden;
   line-height: 1.5;
 font-weight: 400;
 border: 0;
+position: relative;
+display: flex;
+  min-width: 250px;
+  align-items: left;
+  margin: 20px auto;
+  border-bottom: 1px solid #757575;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 8px;
+  justify-content: left;
+
+
 }

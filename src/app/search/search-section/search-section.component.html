@@ -53,15 +53,21 @@
           <button type="button" class="sui-layout-sidebar-toggle" hidden="">
             Save Filters
           </button>
-          <div class="sui-facet">
+          <div>
+            
             <ng-container *ngFor="let facet of searchState.facets | keyvalue"
-              ><app-search-facet class=""
+              >
+              <div class="sui-facet">
+                <app-search-facet
                 [checked]="facets2[$any(facet.key)]"
                 [facet]="searchState.facets[$any(facet.key)][0]"
                 (change)="handleFacetChange($event, $any(facet.key))"
-              ></app-search-facet>
+              >
+              
+            </app-search-facet>
+          </div> 
             </ng-container>
-            
+          
           </div>
           <!-- Search Facet -->
         </div>
