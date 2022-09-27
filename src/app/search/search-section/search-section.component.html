@@ -43,39 +43,44 @@
       </div>
       <!-- Search Bar -->
     </div>
+    <!-- Search Facet -->
     <div class="sui-layout-body">
       <div class="sui-layout-body__inner">
-        <button class="sui-layout-sidebar-toggle" type="button" hidden="">Show filters</button>
-        <div>
-       
-        <!-- Search Facet -->
-
+        <button class="sui-layout-sidebar-toggle" type="button" hidden="">
+          Show filters
+        </button>
         <div class="sui-layout-sidebar">
-          <ng-container *ngFor="let facet of searchState.facets | keyvalue"
-            ><app-search-facet class="sui-facet"
-              [checked]="facets2[$any(facet.key)]"
-              [facet]="searchState.facets[$any(facet.key)][0]"
-              (change)="handleFacetChange($event, $any(facet.key))"
-            ></app-search-facet>
+          <button type="button" class="sui-layout-sidebar-toggle" hidden="">
+            Save Filters
+          </button>
+          <div class="sui-facet">
+            <ng-container *ngFor="let facet of searchState.facets | keyvalue"
+              ><app-search-facet class=""
+                [checked]="facets2[$any(facet.key)]"
+                [facet]="searchState.facets[$any(facet.key)][0]"
+                (change)="handleFacetChange($event, $any(facet.key))"
+              ></app-search-facet>
+            </ng-container>
+            
+          </div>
+          <!-- Search Facet -->
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+          <!-- Search Content -->
+          <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+          <ng-container *ngFor="let result of searchState.results">
+            <app-search-result [result]="result"></app-search-result>
           </ng-container>
+          <!-- </div> -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <app-search-pagination
+              *ngIf="thereAreResults"
+              [totalPages]="searchState.totalPages"
+              (pageChanged)="setCurrentPage($event)"
+            ></app-search-pagination>
+          </div>
+          <!-- Search Content -->
         </div>
-        <!-- Search Facet -->
-      </div>
-      <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-        <!-- Search Content -->
-        <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
-        <ng-container *ngFor="let result of searchState.results">
-          <app-search-result [result]="result"></app-search-result>
-        </ng-container>
-        <!-- </div> -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <app-search-pagination
-            *ngIf="thereAreResults"
-            [totalPages]="searchState.totalPages"
-            (pageChanged)="setCurrentPage($event)"
-          ></app-search-pagination>
-        </div>
-        <!-- Search Content -->
       </div>
     </div>
   </div>
