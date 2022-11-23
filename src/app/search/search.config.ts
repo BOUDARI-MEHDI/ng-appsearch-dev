@@ -3,15 +3,14 @@ import AppSearchAPIConnector from '@elastic/search-ui-app-search-connector';
 
 // @ts-ignore
 const connector = new AppSearchAPIConnector({
-  /* MH connector
-  searchKey: 'search-7gg64ik9tiv18xg16ywjbh35',
-  engineName: 'merge-canton-thales-qpm-toutella-frontend',
-  endpointBase: 'https://entreprise-search-bot.recf.elk.si2m.tec',
-  // hostIdentifier: "https://entreprise-search-bot.recf.elk.si2m.tec" */
-  searchKey: 'search-sp8yqg275te3c33wdjfazsjy',
-  engineName: 'merge-canton-thales-qpm-toutella-frontend',
-  endpointBase:
-    'https://my-deployment-44a53e.ent.eu-west-3.aws.elastic-cloud.com',
+  /* MH connector */
+  searchKey: 'search-snsuo76iiedkkbx5deouk1xk',
+  engineName: 'search-qpm-epargne',
+  //endpointBase: 'https://entreprise-search-bot.recf.elk.si2m.tec',
+  hostIdentifier: 'https://entreprise-search-bot.recf.elk.si2m.tec',
+  /*searchKey: 'search-snsuo76iiedkkbx5deouk1xk',
+  engineName: 'search-epargne',
+  endpointBase: 'https://entreprise-search-bot.recf.elk.si2m.tec', */
 });
 
 const config = {
